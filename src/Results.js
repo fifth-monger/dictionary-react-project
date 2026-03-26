@@ -2,6 +2,7 @@ import React from "react";
 import Meaning from "./Meaning.js";
 import Synonyms from "./Synonyms.js";
 import Phonetic from "./Phonetic.js";
+import Photos from "./Photos.js";
 
 export default function Results(props) {
   if (props.results) {
@@ -33,7 +34,7 @@ export default function Results(props) {
           <Meaning meaning={meaning} />
         </div>
         <div className="Results-right">
-          <div className="image-placeholder">image</div>
+          <Photos photos={props.photos} />
           <Synonyms synonyms={allSynonyms} />
         </div>
       </div>

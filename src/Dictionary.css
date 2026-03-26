@@ -53,6 +53,7 @@
 .Results .word {
   line-height: 1;
   margin-bottom: 8px;
+  margin-top: 30px;
 }
 .Results {
   display: grid;
@@ -179,4 +180,16 @@
 .play-button:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+.result-image {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+.Photos {
+  margin-top: 30px;
+}
+
+.Photos img {
+  border-radius: 4px;
 }
