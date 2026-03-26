@@ -28,7 +28,9 @@ export default function Results(props) {
           <h2 className="word">{props.results.word}</h2>
           <span className="phonetic">{phonetic}</span>
           {meanings.map(function (meaning, index) {
-            return <Meaning key={index} meaning={meaning} />;
+            return (
+              <Meaning key={index} meaning={meaning} total={meanings.length} />
+            );
           })}
         </div>
         <div className="Results-right">

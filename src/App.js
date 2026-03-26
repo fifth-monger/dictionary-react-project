@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">
-          GLOS<span>S</span>
+          TO<span>M</span>E
         </header>
         <main>
           <Dictionary />
