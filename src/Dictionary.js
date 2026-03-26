@@ -29,7 +29,7 @@ export default function Dictionary() {
         <br />
         are you after?
       </h1>
-      <p>definitions. etymology. imagery.</p>
+      <p className="tagline">definitions. phonetics. imagery.</p>
       <form onSubmit={search}>
         <div className="search-wrapper">
           <span className="search-icon">⌕</span>

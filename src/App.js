@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <div className="container">
         <header className="App-header">
-          ETYM<span>A</span>
+          GLOS<span>S</span>
         </header>
         <main>
           <Dictionary />
