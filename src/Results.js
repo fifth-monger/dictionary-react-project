@@ -1,16 +1,13 @@
 import React from "react";
 import Meaning from "./Meaning.js";
 import Synonyms from "./Synonyms.js";
+import Phonetic from "./Phonetic.js";
 
 export default function Results(props) {
   if (props.results) {
     let meanings = props.results.meanings
       .sort((a, b) => b.synonyms.length - a.synonyms.length)
       .slice(0, 3);
-
-    let phonetic =
-      props.results.phonetic ||
-      props.results.phonetics.find((p) => p.text)?.text;
 
     let allSynonyms = [
       ...new Set(
@@ -26,7 +23,15 @@ export default function Results(props) {
       <div className="Results">
         <div className="Results-left">
           <h2 className="word">{props.results.word}</h2>
-          <span className="phonetic">{phonetic}</span>
+          {props.results.phonetics
+            .filter(
+              (phonetic, index, self) =>
+                index === self.findIndex((p) => p.text === phonetic.text),
+            )
+            .slice(0, 1)
+            .map(function (phonetic, index) {
+              return <Phonetic key={index} phonetic={phonetic} />;
+            })}
           {meanings.map(function (meaning, index) {
             return (
               <Meaning key={index} meaning={meaning} total={meanings.length} />
