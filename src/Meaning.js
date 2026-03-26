@@ -2,15 +2,7 @@ import React from "react";
 import Synonyms from "./Synonyms.js";
 
 export default function Meaning(props) {
-  let definition;
-
-  if (props.index === 0) {
-    definition =
-      props.meaning.definitions.find((def) => def.synonyms.length > 0) ||
-      props.meaning.definitions[0];
-  } else {
-    definition = props.meaning.definitions[0];
-  }
+  let definition = props.meaning.definitions[0];
 
   return (
     <div className="Meaning">
