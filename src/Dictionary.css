@@ -91,6 +91,13 @@
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
 }
+.Meaning > div {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.Meaning > div:last-child {
+  border-bottom: none;
+}
 .Meaning:last-child {
   border-bottom: none;
 }
@@ -143,4 +150,33 @@
   color: var(--label);
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+.Phonetic {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.phonetic-text {
+  font-family: "Space Mono", monospace;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.play-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.icon {
+  color: var(--accent);
+}
+.play-button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }

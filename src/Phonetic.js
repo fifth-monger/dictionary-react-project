@@ -11,7 +11,7 @@ export default function Phonetic(props) {
       <span className="phonetic-text">{props.phonetic.text}</span>
       {props.phonetic.audio && (
         <button onClick={playAudio} className="play-button">
-          ▶
+          <span className="icon">▶ </span>play
         </button>
       )}
     </div>

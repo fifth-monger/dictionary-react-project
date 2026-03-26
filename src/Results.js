@@ -5,19 +5,20 @@ import Phonetic from "./Phonetic.js";
 
 export default function Results(props) {
   if (props.results) {
-    let meanings = props.results.meanings
-      .sort((a, b) => b.synonyms.length - a.synonyms.length)
-      .slice(0, 3);
+    let meaning =
+      props.results.meanings.find(
+        (m) =>
+          m.synonyms.length > 0 ||
+          m.definitions.some((d) => d.synonyms.length > 0),
+      ) || props.results.meanings[0];
 
     let allSynonyms = [
-      ...new Set(
-        meanings.flatMap(
-          (m) =>
-            m.definitions.find((d) => d.synonyms.length > 0)?.synonyms ||
-            m.synonyms,
-        ),
-      ),
-    ].slice(0, 6);
+      ...new Set([
+        ...meaning.synonyms,
+        ...meaning.definitions.flatMap((d) => d.synonyms),
+      ]),
+    ];
+
     let phonetic =
       props.results.phonetics.find((p) => p.text && p.audio) ||
       props.results.phonetics.find((p) => p.text) ||
@@ -29,11 +30,7 @@ export default function Results(props) {
         <div className="Results-left">
           <h2 className="word">{props.results.word}</h2>
           {phonetic && <Phonetic phonetic={phonetic} />}
-          {meanings.map(function (meaning, index) {
-            return (
-              <Meaning key={index} meaning={meaning} total={meanings.length} />
-            );
-          })}
+          <Meaning meaning={meaning} />
         </div>
         <div className="Results-right">
           <div className="image-placeholder">image</div>

@@ -1,13 +1,9 @@
 import React from "react";
 
 export default function Meaning(props) {
-  let definitions =
-    props.total === 1
-      ? props.meaning.definitions.slice(0, 3)
-      : [
-          props.meaning.definitions.find((def) => def.synonyms.length > 0) ||
-            props.meaning.definitions[0],
-        ];
+  let definitions = [...props.meaning.definitions]
+    .sort((a, b) => b.synonyms.length - a.synonyms.length)
+    .slice(0, 6);
 
   return (
     <div className="Meaning">
