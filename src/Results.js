@@ -18,20 +18,17 @@ export default function Results(props) {
         ),
       ),
     ].slice(0, 6);
+    let phonetic =
+      props.results.phonetics.find((p) => p.text && p.audio) ||
+      props.results.phonetics.find((p) => p.text) ||
+      props.results.phonetics.find((p) => p.audio) ||
+      props.results.phonetics[0];
 
     return (
       <div className="Results">
         <div className="Results-left">
           <h2 className="word">{props.results.word}</h2>
-          {props.results.phonetics
-            .filter(
-              (phonetic, index, self) =>
-                index === self.findIndex((p) => p.text === phonetic.text),
-            )
-            .slice(0, 1)
-            .map(function (phonetic, index) {
-              return <Phonetic key={index} phonetic={phonetic} />;
-            })}
+          {phonetic && <Phonetic phonetic={phonetic} />}
           {meanings.map(function (meaning, index) {
             return (
               <Meaning key={index} meaning={meaning} total={meanings.length} />
