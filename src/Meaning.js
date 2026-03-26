@@ -11,7 +11,13 @@ export default function Meaning(props) {
       <p className="pos">{props.meaning.partOfSpeech}</p>
       <p className="definition">{definition.definition}</p>
       {definition.example && <p className="example">{definition.example}</p>}
-      <Synonyms synonyms={definition.synonyms} />
+      <Synonyms
+        synonyms={
+          definition.synonyms.length > 0
+            ? definition.synonyms
+            : props.meaning.synonyms
+        }
+      />
     </div>
   );
 }
