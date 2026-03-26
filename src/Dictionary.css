@@ -66,6 +66,14 @@
   display: block;
   margin-bottom: 20px;
 }
+
+.Meaning {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+.Meaning:last-child {
+  border-bottom: none;
+}
 .Meaning .pos {
   font-family: "Space Mono", monospace;
   font-size: 0.75rem;
@@ -88,4 +96,31 @@
   line-height: 1.7;
   border-left: 2px solid var(--accent);
   padding-left: 14px;
+}
+
+.Synonyms {
+  margin-top: 16px;
+}
+.Synonyms ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin-top: 8px;
+}
+.Synonyms li {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+.synonyms-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--label);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
