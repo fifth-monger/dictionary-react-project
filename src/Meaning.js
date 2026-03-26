@@ -1,5 +1,4 @@
 import React from "react";
-import Dictionary from "./Dictionary";
 
 export default function Meaning(props) {
   console.log(props.meaning);
