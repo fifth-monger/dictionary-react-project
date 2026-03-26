@@ -1,1 +1,56 @@
-
+.Dictionary {
+  padding: 80px 0;
+}
+.Dictionary form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.search-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  transform: translateY(-3%) scaleX(-1);
+}
+.Dictionary input {
+  flex: 1;
+  height: 44px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  color: var(--text);
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  padding: 0 16px 0 44px;
+  caret-color: var(--accent);
+}
+.Dictionary input:focus {
+  outline: none;
+  box-shadow: 0 0 8px 3px var(--accent);
+}
+.Dictionary input::placeholder {
+  color: var(--muted);
+}
+.Dictionary button {
+  border-radius: 3px;
+}
+.Dictionary h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.Dictionary p {
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 50px;
+}

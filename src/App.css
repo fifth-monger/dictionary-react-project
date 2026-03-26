@@ -9,5 +9,16 @@
   height: 52px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
+}
+.App-header span {
+  color: var(--accent);
+}
+.App footer {
+  padding: 20px 0;
+  color: var(--muted);
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  border-top: 2px solid var(--border);
+  margin-top: 40px;
 }
