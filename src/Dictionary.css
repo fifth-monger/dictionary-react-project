@@ -1,5 +1,5 @@
 .Dictionary {
-  padding: 80px 0;
+  padding: 80px 0 40px;;
 }
 .search-wrapper {
   position: relative;
@@ -192,4 +192,33 @@
 
 .Photos img {
   border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .Results {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-top: 0;
+  }
+
+  .Results-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+  }
+
+  .Dictionary h1,
+  .Results .word {
+    font-size: 2rem;
+  }
+
+  .play-button {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .result-image:not(:first-child) {
+    display: none;
+  }
 }

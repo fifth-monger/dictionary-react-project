@@ -34,7 +34,17 @@ export default function Results(props) {
           <Meaning meaning={meaning} />
         </div>
         <div className="Results-right">
-          <Photos photos={props.photos} />
+          <div className="result-images">
+            {props.photos && props.photos[0] && (
+              <img src={props.photos[0].src.landscape} alt={props.photos[0].alt} className="img-fluid result-image" />
+            )}
+            {props.photos && props.photos[1] && (
+              <img src={props.photos[1].src.landscape} alt={props.photos[1].alt} className="img-fluid result-image" />
+            )}
+            {props.photos && props.photos[2] && (
+              <img src={props.photos[2].src.landscape} alt={props.photos[2].alt} className="img-fluid result-image" />
+            )}
+          </div>
           <Synonyms synonyms={allSynonyms} />
         </div>
       </div>
